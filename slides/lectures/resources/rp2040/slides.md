@@ -47,6 +47,7 @@ that use RP2040
 ---
 layout: two-cols
 ---
+
 # The Chip
 
 <div align="center">
@@ -63,7 +64,7 @@ layout: two-cols
 
 |  |  |
 |------|-------------|
-| SIO  | Single Cycle Input/Output |
+| SIO | Single Cycle I/O (implements GPIO)|
 | PWM | Pulse With Modulation |
 | ADC | Analog to Digital Converter |
 | (Q)SPI | (Quad) Serial Peripheral Interface |

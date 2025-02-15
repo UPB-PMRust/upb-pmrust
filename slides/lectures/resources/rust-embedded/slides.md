@@ -5,7 +5,7 @@ layout: section
 The Rust API for embedded systems
 
 ---
----
+
 # The Rust Embedded Stack
 
 <div grid="~ cols-2 gap-4">
@@ -17,6 +17,7 @@ The Rust API for embedded systems
 | BSC | Board Support Crate `embassy-rp`, `rp-pico` |
 | *HAL Implementation* | Uses the PAC and exports a standard HAL towards the upper levels `embassy-rp` |
 | PAC | Accesses registers, usually created automatically from SVD files - `rp2040_pac`, `rp-pac` |
+| μ-architecture | `cortex-m` processor startup |
 
 
 </div>

@@ -1,6 +1,6 @@
 <template>
   <header class="absolute top-0 right-0">
-    <img src="../assets/img/logo.svg" width="70" />
+    <img src="../../assets/img/logo.svg" width="70" />
   </header>
   <footer
     v-if="$slidev.nav.currentPage == 1"

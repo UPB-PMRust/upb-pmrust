@@ -34,13 +34,24 @@ Lecture 2
 - Embedded Rust Stack
 - embassy-rs
 
+<!-- Bitwise -->
+
+---
+src: ../../resources/bitwise/slides.md
+---
+
+---
+src: ../../resources/bitwise/c_bit.md
+---
+
+
 <!-- MMIO -->
 
 ---
 src: ../../resources/mmio/slides.md
 ---
 
-<!-- Bitwise -->
+<!-- bitwise -->
 
 ---
 src: ../../resources/bitwise/rust.md
@@ -49,6 +60,19 @@ src: ../../resources/bitwise/rust.md
 ---
 src: ../../resources/bitwise/c.md
 ---
+
+<!-- general obs on GPIO -->
+---
+src: ../../resources/sio/gpio_intro.md
+---
+
+<!-- AVR GPIO with C -->
+
+
+---
+src: ../../resources/sio/gpio_avr.md
+---
+
 
 <!-- SIO -->
 
@@ -68,7 +92,22 @@ src: ../../resources/rust-embedded/slides.md
 src: ../../resources/embassy-rs/slides.md
 ---
 
+
+<!-- embassy-rs -->
+
+;---
+;src: ../../resources/signals/digital_v2.md
+
+;---
+
 ---
+src: ../../resources/signals/basic.md
+---
+
+---
+src: ../../resources/signals/extra.md
+---
+
 ---
 # Conclusion
 we talked about
