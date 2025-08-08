@@ -25,22 +25,21 @@ background:
 Lecture 2
 
 ---
----
 
-# GPIO for RP2040
+# GPIO for RP2350
 
 - Memory Mapped I/O
   - GPIO Peripheral
 - Embedded Rust Stack
 - embassy-rs
 
-<!-- MMIO -->
-
 ---
-src: ../../resources/mmio/slides.md
+src: ../../resources/intro_rust/slides.md
 ---
 
-<!-- Bitwise -->
+<!--
+Bitwise
+-->
 
 ---
 src: ../../resources/bitwise/rust.md
@@ -49,6 +48,28 @@ src: ../../resources/bitwise/rust.md
 ---
 src: ../../resources/bitwise/c.md
 ---
+
+
+<!-- MMIO -->
+
+---
+src: ../../resources/mmio/slides.md
+---
+
+
+
+<!-- general obs on GPIO -->
+---
+src: ../../resources/gpio_avr/gpio_intro.md
+---
+
+<!-- AVR GPIO with C -->
+
+
+---
+src: ../../resources/gpio_avr/slides.md
+---
+
 
 <!-- SIO -->
 
@@ -68,7 +89,23 @@ src: ../../resources/rust-embedded/slides.md
 src: ../../resources/embassy-rs/slides.md
 ---
 
+
+<!-- embassy-rs -->
+
+;---
+;src: ../../resources/signals/digital_v2.md
+
+;---
+
 ---
+src: ../../resources/signals/basic.md
+---
+
+---
+src: ../../resources/signals/extra.md
+---
+
+
 ---
 # Conclusion
 we talked about
