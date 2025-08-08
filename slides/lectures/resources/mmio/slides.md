@@ -92,10 +92,11 @@ Register Examples:
 const SYS_CTRL_ADDR: usize = 0xe000_0000;
 const CPUID_OFFSET: usize = 0xed00;
 
-let cpuid_reg = (SYS_CTRL_ADDR+CPUID_OFFSET) as *const u32;
-let cpuid_value = unsafe { *cpuid_reg };
+let cpuid_reg_addr = (SYS_CTRL_ADDR+CPUID_OFFSET) 
+                    as *const u32;
+let cpuid_value = unsafe { *cpuid_reg_addr };
 // or
-let cpuid_value = unsafe { cpuid_reg.read() };
+let cpuid_value = unsafe { cpuid_reg_addr.read() };
 ```
 
 <v-click>
@@ -230,9 +231,9 @@ use core::ptr::read_volatile;
 const SYS_CTRL_ADDR: usize = 0xe000_0000;
 const CPUID_OFST: usize = 0xed00;
 
-let cpuid_reg = (SYS_CTRL_ADDR+CPUID_OFST) as *const u32;
+let cpuid_reg_addr = (SYS_CTRL_ADDR+CPUID_OFST) as *const u32;
 let cpuid_value = unsafe {
-    read_volatile(cpuid_reg)
+    read_volatile(cpuid_reg_addr)
 };
 
 // shift right 24 bits and keep only the last 8 bits
@@ -272,9 +273,9 @@ const AIRCR_OFST: usize = 0xed0c;
 const VECTKEY_POS: u32 = 16;
 const SYSRESETREQ_POS: u32 = 2;
 
-let aircr_register = (SYS_CTRL + AIRCR) as *mut u32;
+let aircr_register_addr = (SYS_CTRL_ADDR + AIRCR) as *mut u32;
 let mut aircr_value = unsafe { 
-    read_volatile(aircr_register) 
+    read_volatile(aircr_register_addr) 
 };
 
 aircr_value = aircr_value & !(0xffff << VECTKEY_POS); 
@@ -282,7 +283,7 @@ aircr_value = aircr_value | (0x05fa << VECTKEY_POS);
 aircr_value = aircr_value | (1 << SYSRESETREQ_POS);
 
 unsafe {
-    write_volatile(aircr_register, aircr_value);
+    write_volatile(aircr_register_addr, aircr_value);
 }
 ```
 
@@ -425,7 +426,7 @@ use tock_registers::registers::{ReadOnly, ReadWrite};
 register_structs! {
 SysCtrl {
 	// we registers up to 0xed00
-	(0x0000 => _reserved1),
+	(0x0000 => _reserved1), //padding
 	// we define the CPUID register
 	(0xed00 => cpuid: ReadOnly<u32, CPUID::Register>),
 	// we registers up to 0xed
