@@ -198,7 +198,7 @@ c.top = 0x8000;
 c.compare_b = 8;
 
 let mut pwm = Pwm::new_output_b(
-    p.PWM_CH4, 
+    p.PWM_SLICE4, 
     p.PIN_25, 
     c.clone()
 );
