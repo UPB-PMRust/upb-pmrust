@@ -252,7 +252,7 @@ const ALARM0: *mut u32 = 0x4005_4010;
 const INTE_SET: *mut u32 = 0x4005_4038 + 0x2000;
 
 // set an alarm after 3 seconds
-let us = 3_0000_0000;
+let us = 3_000_000;
 
 unsafe {
     let time = read_volatile(TIMERLR);

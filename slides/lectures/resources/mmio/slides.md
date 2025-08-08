@@ -50,7 +50,7 @@ const CPUID: usize = 0xed00;
 let cpuid_reg = (SYS_CTRL + CPUID) as *const u32;
 let cpuid_value = unsafe { *cpuid_reg };
 // or
-let cpuid_value = unsafe { cpuid_reg.read() };
+let cpuid_value = unsafe { cpuid_reg_addr.read() };
 ```
 
 <v-click>
@@ -186,7 +186,7 @@ const CPUID: usize = 0xed00;
 
 let cpuid_reg = (SYS_CTRL + CPUID) as *const u32;
 let cpuid_value = unsafe {
-    read_volatile(cpuid_reg)
+    read_volatile(cpuid_reg_addr)
 };
 
 // shift right 24 bits and keep only the last 8 bits
@@ -227,9 +227,9 @@ const AIRCR: usize = 0xed0c;
 const VECTKEY: u32 = 16;
 const SYSRESETREQ: u32 = 2;
 
-let aircr_register = (SYS_CTRL + AIRCR) as *mut u32;
+let aircr_register_addr = (SYS_CTRL_ADDR + AIRCR) as *mut u32;
 let mut aircr_value = unsafe { 
-    read_volatile(aircr_register) 
+    read_volatile(aircr_register_addr) 
 };
 
 aircr_value = aircr_value & ~(0x1111 << VECTKEY); 
@@ -237,7 +237,7 @@ aircr_value = aircr_value | (0x05fa << VECTKEY);
 aircr_value = aircr_value | (1 << SYSRESETREQ);
 
 unsafe {
-    write_volatile(aircr_register, aircr_value);
+    write_volatile(aircr_register_addr, aircr_value);
 }
 ```
 

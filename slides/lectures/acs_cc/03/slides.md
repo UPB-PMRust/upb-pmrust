@@ -5,13 +5,13 @@ class: text-center
 highlighter: shiki
 lineNumbers: true
 info: |
-  ## Exceptions and Interrupts
+  ## Interrupts, PWM and ADC
 drawings:
   persist: false
 defaults:
   foo: true
 transition: slide-left
-title: MA - 03 - Exceptions and Interrupts
+title: PM - 03 - Interrupts, PWM and ADC
 mdc: true
 layout: cover
 themeConfig:
@@ -21,29 +21,78 @@ exportFilename: pm_cc-03
 background:
 ---
 
-# Exceptions and Interrupts
+# Interrupts, PWM and ADC
 Lecture 3
 
 ---
 
-# Exceptions and Interrupts
-used by RP2040
+# Interrupts, PWM and ADC
 
-- Exceptions
 - Interrupts
-- Boot
+- Counters
+- Timers and Alarms
+- About Analog and Digital Signals
+- Pulse Width Modulation (PWM)
+- Analog to Digital Converters (ADC)
 
-<!-- Exceptions -->
+<!-- Interupts intro with 328P -->
 
 ---
-src: ../../resources/exceptions/slides.md
+src: ../../resources/dr-03/intro_interupts.md
+---
+
+<!-- Interrupts -->
+
+---
+src: ../../resources/interrupts/slides.md
+---
+
+<!-- Timers intro -->
+
+---
+src: ../../resources/dr-03/extra_timers.md 
+---
+
+
+<!-- Timers -->
+
+---
+src: ../../resources/timers/slides.md
+---
+
+<!-- Signals -->
+
+---
+src: ../../resources/signals/basic.md
+---
+
+<!-- PWM  intro -->
+
+---
+src: ../../resources/dr-03/pwm_intro.md 
+---
+
+<!-- PWM -->
+
+---
+src: ../../resources/pwm/slides.md
+---
+
+<!-- ADC -->
+
+---
+src: ../../resources/adc/slides.md
 ---
 
 ---
----
+
 # Conclusion
 we talked about
 
-- Exceptions
-- Interrupts
-- How the RP2040 boots and loads the software
+- Exceptions and Interrupts
+- Counters
+- SysTick
+- Timers and Alarms
+- PWM
+- Analog and Digital
+- ADC
